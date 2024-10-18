@@ -11,7 +11,6 @@ void PTCDD (int X, int *Y){ //Imprime a distancia entre as Cidades
         }
         printf("\n");
     }
-    printf("\n");
 
 }
 
@@ -20,7 +19,7 @@ void PTITI (int X, int Y, int *A, int *B, int *C){ //Imprime os itinerarios e a 
     int  i, j, soma=0; // Variaveis de auxilio
 
     for(i=0; i<X; i++){// imprime o Itinerario
-            printf("\nItinerario %d:\n", i+1);
+            printf("\nItinerario %d:  ", i+1);
             soma=Y*i;
             for(j=0; j<=*(C+i); j++){
                 printf("%d ",*(A+soma+j));
@@ -89,10 +88,6 @@ int main() {
         for (j=0; j<TMITI[i]; j++){ // Faz o calculo da distancia
             DTITI[i]=DTITI[i] + MZCDD[MZITI[i][j]][MZITI[i][j+1]];
         }
-    }
-
-    for(i=0; i<ITI; i++){
-        printf("%d", *(TM+i));
     }
 
     PTCDD(CDD, MZC); //Imprime a Matriz de distancia da Cidade
