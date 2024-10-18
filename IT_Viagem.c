@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void PTCDD (int X, int *Y){ //Imprime a Matriz de distancia da Cidade
+void PTCDD (int X, int *Y){ //Imprime a distancia entre as Cidades
 
-    int i,j;
+    int i,j; // Variaveis de auxilio
     printf("\nMatriz com as distancias entre as cidades:\n\n");
     for(i=0; i<X; i++) {
         for(j=0; j<X; j++){
@@ -15,18 +15,18 @@ void PTCDD (int X, int *Y){ //Imprime a Matriz de distancia da Cidade
 
 }
 
-void PTITI (int X, int Y, int *A, int *B, int *C){
+void PTITI (int X, int Y, int *A, int *B, int *C){ //Imprime os itinerarios e a distancia Total
 
-    int  i, j, soma=0;
+    int  i, j, soma=0; // Variaveis de auxilio
 
-    for(i=0; i<X; i++){
+    for(i=0; i<X; i++){// imprime o Itinerario
             printf("\nItinerario %d:\n", i+1);
             soma=Y*i;
             for(j=0; j<=*(C+i); j++){
                 printf("%d ",*(A+soma+j));
             }
             printf("\n\n");
-            printf("A distancia total do Itinerario %d e de:  %d", i+1, *(B+i));
+            printf("A distancia total do Itinerario %d e de:  %d", i+1, *(B+i)); //imprime a distancia total
             printf("\n");
         }
         printf("\n");
@@ -79,7 +79,7 @@ int main() {
                  (*(TM+i))++;
             }
             else{
-                printf("\nEssa cidade NAO existe. As Cidades Existentes sao: \n"); // Caso a cidade nao exista
+                printf("\nEssa cidade NAO existe. As Cidades Existentes sao: \n"); // Caso a cidade nao exista, informa as cidades existentes
                 for (j=0; j<CDD; j++) {
                     printf("Cidade %d;  ", j);
                 }
